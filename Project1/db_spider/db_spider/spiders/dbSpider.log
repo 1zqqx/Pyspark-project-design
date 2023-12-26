@@ -1,0 +1,19 @@
+2023-12-26 19:47:49 [scrapy.core.scraper] ERROR: Spider error processing <GET https://movie.douban.com/subject/36178641/reviews> (referer: None)
+Traceback (most recent call last):
+  File "E:\Python\lib\site-packages\twisted\internet\defer.py", line 892, in _runCallbacks
+    current.result = callback(  # type: ignore[misc]
+  File "E:\Python\lib\site-packages\scrapy\spiders\__init__.py", line 79, in _parse
+    return self.parse(response, **kwargs)
+  File "F:\WorkSpace\Software Engineering Practice 2\Pyspark project design\Project1\db_spider\db_spider\spiders\dbSpider.py", line 10, in parse
+    tile = response.xpath('//html/head/title/text()').excract()
+AttributeError: 'SelectorList' object has no attribute 'excract'
+2023-12-26 19:48:03 [scrapy.core.scraper] ERROR: Spider must return request, item, or None, got 'Selector' in <GET https://movie.douban.com/subject/36178641/reviews>
+2023-12-26 19:50:00 [scrapy.core.scraper] ERROR: Spider error processing <GET https://movie.douban.com/subject/36178641/reviews> (referer: None)
+Traceback (most recent call last):
+  File "E:\Python\lib\site-packages\twisted\internet\defer.py", line 892, in _runCallbacks
+    current.result = callback(  # type: ignore[misc]
+  File "E:\Python\lib\site-packages\scrapy\spiders\__init__.py", line 79, in _parse
+    return self.parse(response, **kwargs)
+  File "F:\WorkSpace\Software Engineering Practice 2\Pyspark project design\Project1\db_spider\db_spider\spiders\dbSpider.py", line 10, in parse
+    review_list = response.xpath('//html/body/div[@class="wrapper"]/div[@id="content"]/h1/text()').excract_first()
+AttributeError: 'SelectorList' object has no attribute 'excract_first'
