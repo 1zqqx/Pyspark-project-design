@@ -290,3 +290,54 @@ Traceback (most recent call last):
   File "E:\Python\lib\site-packages\parsel\selector.py", line 650, in xpath
     raise ValueError(f"XPath error: {exc} in {query}")
 ValueError: XPath error: Invalid predicate in div/div[@class='action']/a[@class='reply '/text()
+2023-12-26 22:03:15 [scrapy.core.scraper] ERROR: Spider error processing <GET https://movie.douban.com/subject/36178641/reviews> (referer: None)
+Traceback (most recent call last):
+  File "E:\Python\lib\site-packages\twisted\internet\defer.py", line 892, in _runCallbacks
+    current.result = callback(  # type: ignore[misc]
+  File "E:\Python\lib\site-packages\scrapy\spiders\__init__.py", line 79, in _parse
+    return self.parse(response, **kwargs)
+  File "F:\WorkSpace\Software Engineering Practice 2\Pyspark project design\Project1\db_spider\db_spider\spiders\dbSpider.py", line 20, in parse
+    movies_name = i.xpath(
+  File "E:\Python\lib\site-packages\parsel\selector.py", line 143, in __getitem__
+    o = super().__getitem__(pos)
+IndexError: list index out of range
+2023-12-26 22:15:37 [scrapy.core.scraper] ERROR: Spider error processing <GET https://movie.douban.com/subject/36178641/reviews> (referer: None)
+Traceback (most recent call last):
+  File "E:\Python\lib\site-packages\twisted\internet\defer.py", line 892, in _runCallbacks
+    current.result = callback(  # type: ignore[misc]
+  File "E:\Python\lib\site-packages\scrapy\spiders\__init__.py", line 79, in _parse
+    return self.parse(response, **kwargs)
+  File "F:\WorkSpace\Software Engineering Practice 2\Pyspark project design\Project1\db_spider\db_spider\spiders\dbSpider.py", line 21, in parse
+    "a[@class='subject-img']/img/@title").all().toString()
+AttributeError: 'SelectorList' object has no attribute 'all'
+2023-12-26 22:16:01 [scrapy.core.scraper] ERROR: Spider error processing <GET https://movie.douban.com/subject/36178641/reviews> (referer: None)
+Traceback (most recent call last):
+  File "E:\Python\lib\site-packages\twisted\internet\defer.py", line 892, in _runCallbacks
+    current.result = callback(  # type: ignore[misc]
+  File "E:\Python\lib\site-packages\scrapy\spiders\__init__.py", line 79, in _parse
+    return self.parse(response, **kwargs)
+  File "F:\WorkSpace\Software Engineering Practice 2\Pyspark project design\Project1\db_spider\db_spider\spiders\dbSpider.py", line 21, in parse
+    "a[@class='subject-img']/img/@title").toString()
+AttributeError: 'SelectorList' object has no attribute 'toString'
+2023-12-26 22:36:29 [scrapy.core.scraper] ERROR: Spider error processing <GET https://movie.douban.com/subject/36178641/reviews> (referer: None)
+Traceback (most recent call last):
+  File "E:\Python\lib\site-packages\twisted\internet\defer.py", line 892, in _runCallbacks
+    current.result = callback(  # type: ignore[misc]
+  File "E:\Python\lib\site-packages\scrapy\spiders\__init__.py", line 79, in _parse
+    return self.parse(response, **kwargs)
+  File "F:\WorkSpace\Software Engineering Practice 2\Pyspark project design\Project1\db_spider\db_spider\spiders\dbSpider.py", line 20, in parse
+    movies_name = i.xpath(
+  File "E:\Python\lib\site-packages\parsel\selector.py", line 143, in __getitem__
+    o = super().__getitem__(pos)
+IndexError: list index out of range
+2023-12-26 22:37:22 [scrapy.core.scraper] ERROR: Spider error processing <GET https://movie.douban.com/subject/36178641/reviews> (referer: None)
+Traceback (most recent call last):
+  File "E:\Python\lib\site-packages\twisted\internet\defer.py", line 892, in _runCallbacks
+    current.result = callback(  # type: ignore[misc]
+  File "E:\Python\lib\site-packages\scrapy\spiders\__init__.py", line 79, in _parse
+    return self.parse(response, **kwargs)
+  File "F:\WorkSpace\Software Engineering Practice 2\Pyspark project design\Project1\db_spider\db_spider\spiders\dbSpider.py", line 20, in parse
+    movies_name = i.xpath(
+  File "E:\Python\lib\site-packages\parsel\selector.py", line 143, in __getitem__
+    o = super().__getitem__(pos)
+IndexError: list index out of range

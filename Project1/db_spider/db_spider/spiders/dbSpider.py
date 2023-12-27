@@ -17,6 +17,8 @@ class BaiduSpider(scrapy.Spider):
         for i in review_list:
             movies_map = {}
 
+            movies_name = i.xpath(
+                "a/img[@rel='v:image']/@title")
             # 用户名
             user_name = i.xpath(
                 "header/a[@class='name']/text()").extract_first()
@@ -43,6 +45,7 @@ class BaiduSpider(scrapy.Spider):
             reviews_reply = i.xpath(
                 "div/div[@class='action']/a[@class='reply ']/text()").extract_first()
 
+            movies_map['movies_name'] = movies_name
             movies_map['user_name'] = user_name
             movies_map['reviews_time'] = reviews_time
             movies_map['reviews_title'] = reviews_title
