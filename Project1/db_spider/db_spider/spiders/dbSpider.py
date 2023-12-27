@@ -18,7 +18,7 @@ class BaiduSpider(scrapy.Spider):
             movies_map = {}
 
             movies_name = i.xpath(
-                "a/img[@rel='v:image']/@title")
+                "a[@class='subject-img']/img/@src").extract()
             # 用户名
             user_name = i.xpath(
                 "header/a[@class='name']/text()").extract_first()
