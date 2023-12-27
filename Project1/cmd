@@ -1,0 +1,5 @@
+创建scrapy 项目  scrapy startproject <project name>
+创建  scrapy genspider quotes "quotes.toscrape.com"
+
+scrapy crawl <name>
+scrapy crawl <name> -o <name>.json
