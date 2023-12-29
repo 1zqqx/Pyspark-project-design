@@ -36,7 +36,7 @@ class LjxSpider(scrapy.Spider):
             item['moviesLeadRole'] = "主演" + temp[0].split("主演")[1] if len(temp[0].split("主演")) > 1 else 'NULL'
             temp_1 = temp[1].split('/')
             item['moviesTime'] = temp_1[0]
-            item['moviesSector'] = temp_1[1]
+            item['moviesSector'] = temp_1[1].split(' ')
             if len(temp_1) == 3:
                 item['moviesType'] = temp_1[2].split(' ')
             # 评分 -------------------------------------------------------------------------------------------
