@@ -20,6 +20,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
@@ -54,6 +57,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "fileTemplates",
+    "settings.editor.splitter.proportion": "0.28614458",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -222,7 +226,8 @@
       <workItem from="1703670353480" duration="1758000" />
       <workItem from="1703678969038" duration="3409000" />
       <workItem from="1703741758318" duration="1488000" />
-      <workItem from="1703830483074" duration="4242000" />
+      <workItem from="1703830483074" duration="5837000" />
+      <workItem from="1703916656975" duration="222000" />
     </task>
     <task id="LOCAL-00001" summary="&quot;fixed&quot;">
       <option name="closed" value="true" />
