@@ -1,13 +1,15 @@
 import scrapy
 
 from ..items import QdfictionItem
+from time import sleep
 
-# 全部作品 100 条
+
+# 全部作品 100 条 - 收藏
 
 class QdSpider(scrapy.Spider):
     name = "qd"
     allowed_domains = ["www.qidian.com"]
-    start_urls = ["https://www.qidian.com/all/page5/"]
+    start_urls = ["https://www.qidian.com/all/orderId11-page5/"]
 
     def parse(self, response):
         li_list = response.xpath('//div[@class="book-mid-info"]')
@@ -29,5 +31,6 @@ class QdSpider(scrapy.Spider):
         if next_url != 'javascript:;' and next_url is not None:
             next_url = 'https:' + next_url
             print("[=] " + next_url)
+            sleep(1)
             yield scrapy.Request(url=next_url, callback=self.parse)
         pass
