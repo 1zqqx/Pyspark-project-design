@@ -17,5 +17,6 @@ class QdfictionItem(scrapy.Item):
     book_second_partition = scrapy.Field()  # 二级分区
     book_status = scrapy.Field()  # 连载/完结
     book_intro = scrapy.Field()  # 书介绍
-    book_wordage = scrapy.Field()  # 书字数
+    # book_wordage = scrapy.Field()  # 书字数
+    date_list = scrapy.Field()  # 上榜年月份
     pass

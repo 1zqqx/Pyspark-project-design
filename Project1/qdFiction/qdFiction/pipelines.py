@@ -12,11 +12,7 @@ import re
 
 class QdfictionPipeline:
     def process_item(self, item, spider):
-        item['book_intro'] = self.process_content(item['book_intro'])
-        # print(item)
-        return item
+        pass
 
     def process_content(self, content):
-        content = re.sub(r"[ \r]", '', content)
-        return content
         pass
