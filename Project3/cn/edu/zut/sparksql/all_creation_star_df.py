@@ -15,7 +15,8 @@ def _test():
         .config("spark.driver.bindAddress", "127.0.0.1") \
         .getOrCreate()
 
-    url = "jdbc:mysql://192.168.231.140:3306/pysql"
+    # 解决乱码问题
+    url = "jdbc:mysql://192.168.231.140:3306/pysql?characterEncoding=utf8"
     properties = {
         'user': 'liuqiqi', 'password': 'liuqiqi', 'driver': 'com.mysql.jdbc.Driver'
     }
@@ -24,7 +25,8 @@ def _test():
     df.groupby(['book_first_partition', 'book_status']) \
         .count() \
         .sort(df.book_first_partition.desc(), df.book_status.asc()) \
-        .show(1000)
+        .write.jdbc(
+        url=url, table='all_creation_star_df', mode='overwrite', properties=properties)
 
     df.printSchema()
 

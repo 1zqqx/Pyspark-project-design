@@ -15,7 +15,8 @@ def _test():
         .config("spark.driver.bindAddress", "127.0.0.1") \
         .getOrCreate()
 
-    url = "jdbc:mysql://192.168.231.140:3306/pysql"
+    # 解决乱码问题
+    url = "jdbc:mysql://192.168.231.140:3306/pysql?characterEncoding=utf8"
     properties = {
         'user': 'liuqiqi', 'password': 'liuqiqi', 'driver': 'com.mysql.jdbc.Driver'
     }
@@ -24,18 +25,21 @@ def _test():
     df.groupby(['book_first_partition', df.book_second_partition, df.book_status]) \
         .count() \
         .sort(df.book_first_partition.desc(), df.book_second_partition.desc(), df.book_status.desc()) \
-        .show(1000)
+        .write.jdbc(
+        url=url, table='all_creation_dfsql', mode='overwrite', properties=properties)
 
-    print(">+<" * 30)
+    # print(">+<" * 30)
 
     df.groupby("book_author") \
         .agg({"book_author": "count"}) \
         .withColumnRenamed("count(book_author)", "count") \
         .orderBy("count", ascending=False) \
-        .show(1000)
+        .write.jdbc(
+        url=url, table='all_creation_dfsql_author', mode='overwrite', properties=properties)
 
     # print(type(df))
-    print(df.schema)
+    # print(df.schema)
+    df.printSchema()
 
     spark.stop()
     pass
