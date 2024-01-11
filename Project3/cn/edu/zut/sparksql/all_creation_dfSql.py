@@ -22,9 +22,9 @@ def _test():
     }
     df = spark.read.jdbc(url=url, table='all_creation', properties=properties)
 
-    df.groupby(['book_first_partition', df.book_second_partition, df.book_status]) \
+    df.groupby(['book_first_partition', df.book_status]) \
         .count() \
-        .sort(df.book_first_partition.desc(), df.book_second_partition.desc(), df.book_status.desc()) \
+        .sort(df.book_first_partition.desc(), df.book_status.desc()) \
         .write.jdbc(
         url=url, table='all_creation_dfsql', mode='overwrite', properties=properties)
 
