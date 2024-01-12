@@ -31,9 +31,9 @@ def get_cloud_chart():
     cursor.execute(sql)
     dt_data = []
     for item in cursor.fetchall():
-        dt_data.append((item[0], str(item[1])))
+        dt_data.append((item[0], item[1]))
         pass
-    print(dt_data)
+    # print(dt_data)
     c = (
         WordCloud()
         .add(series_name="热门二级分类", data_pair=dt_data, word_size_range=[6, 66])
